@@ -1,13 +1,13 @@
 <template>
  <div class="menu_bar">
-    <div v-show="defaultMenu">
+    <div class="menu" v-show="!showBar">
       <div>
-        <button class="menu_bar_open_btn" @click="defaultMenu = !defaultMenu">=</button>
+        <button class="menu_bar_open_btn" @click="showBar = !showBar">=</button>
       </div>
     </div>
-    <div v-show="!defaultMenu">
+    <div class="menu" v-show="showBar">
       <div>
-        <button class="menu_bar_close_btn" @click="defaultMenu = !defaultMenu">X</button>
+        <button class="menu_bar_close_btn" @click="showBar = !showBar">X</button>
       </div>
       <div>
         <div class="menu_section">
@@ -30,8 +30,7 @@ export default {
   name: 'MenuBar',
   data () {
     return {
-      defaultMenu: true,
-      msg: 'Welcome to Your Vue.js App'
+      showBar: false
     }
   }
 }
@@ -41,13 +40,18 @@ export default {
 <style scoped>
 div.menu_bar {
   position: fixed;
-  left: 80%;
+  float: right;
+  left: 70%;
   top: 10%;
   width: 30%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: brown;
 }
 
 div.menu_section {
   margin:5% auto;
+  text-align: right;
 }
 
 button.menu_bar_open_btn {
@@ -78,5 +82,16 @@ button.menu_bar_close_btn {
   cursor:pointer;
   overflow: hidden;
   outline:none;
+  border-style: solid;
+  border-width: 5px;
+  border-color: red;
+}
+
+div.menu {
+  position: relative;
+  top: 10%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
 }
 </style>
