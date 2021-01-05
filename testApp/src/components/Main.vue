@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <app-menu-bar v-show="showBar"></app-menu-bar>
-        <div class="menu">
+    <div class="main">
+        <app-floating-menu-bar v-show="showBar"></app-floating-menu-bar>
+        <div v-observe-visibility="visibilityChanged" class="menu">
           <div class="menu_section">
-            Menu Section A blabalbablbalab
+            Menu Section A blabalbablbalabobo
           </div>
           <div class="menu_section">
             Menu Section B
@@ -11,8 +11,9 @@
           <div class="menu_section">
             Menu Section C balablabablablablablablaajakjkajkajk
           </div>
+          <img src="../assets/pizza.jpeg"/>
         </div>
-        <div v-observe-visibility="visibilityChanged">
+        <div class="test">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum eu risus ac efficitur. Mauris quis elit gravida, dignissim libero sed, bibendum lectus. Quisque lobortis ipsum eget cursus suscipit. Donec id ipsum vel tellus porttitor egestas non ut enim. Donec lacinia odio eu sem laoreet volutpat. Donec finibus orci cursus nibh faucibus aliquet. Suspendisse potenti. Phasellus aliquam orci id ligula eleifend rhoncus. Vestibulum at pretium nulla. Curabitur maximus pulvinar mi eget consequat. Integer interdum mollis lacinia. Nulla metus mi, congue ac felis eu, gravida consequat ipsum. Aenean sit amet velit vel elit suscipit hendrerit eget nec nisl. Cras sed iaculis ex, non congue libero.
 
             Nulla ultrices lobortis velit, nec aliquet velit volutpat in. Phasellus interdum ex non quam ultrices malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae pulvinar arcu. Donec condimentum, tortor vel vulputate laoreet, risus neque finibus turpis, eu vestibulum urna turpis at ante. Donec maximus augue vel felis pulvinar eleifend et at purus. Donec id nulla ipsum.
@@ -84,10 +85,10 @@
     </div>
 </template>
 <script>
-import MenuBar from './MenuBar.vue'
+import FloatingMenuBar from './FloatingMenuBar.vue'
 export default {
   components: {
-    'app-menu-bar': MenuBar
+    'app-floating-menu-bar': FloatingMenuBar
   },
   data () {
     return {
@@ -105,6 +106,14 @@ export default {
 
 <style scoped>
 
+div.main{
+  width: auto;
+}
+
+img{
+  width:100%;
+}
+
 div.menu_section {
   margin:5% auto;
   text-align: right;
@@ -112,9 +121,15 @@ div.menu_section {
 
 div.menu {
   position: relative;
+  width: 100%;
   float: right;
   top: 10%;
   border-style: solid;
-  border-width: 5px;;
+  border-width: 5px;
+  background-color: red;
+}
+div.test {
+  width: auto;
+  background-color:purple;
 }
 </style>

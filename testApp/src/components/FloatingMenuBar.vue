@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'MenuBar',
+  name: 'FloatingMenuBar',
   data () {
     return {
       showBar: false
