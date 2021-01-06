@@ -1,19 +1,13 @@
 <template>
     <div class="main">
-        <app-floating-menu-bar v-show="showBar"></app-floating-menu-bar>
-        <div v-observe-visibility="visibilityChanged" class="menu">
-          <div class="menu_section">
-            Menu Section A blabalbablbalabobo
+        <app-floating-menu-bar v-show="showBar" @scroll="scrollMeTo(...arguments)"></app-floating-menu-bar>
+        <div>
+        <img src="../assets/pizza.jpeg"/>
+          <div v-observe-visibility="visibilityChanged" class="menu">
+            <app-section @scroll="scrollMeTo(...arguments)"></app-section>
           </div>
-          <div class="menu_section">
-            Menu Section B
-          </div>
-          <div class="menu_section">
-            Menu Section C balablabablablablablablaajakjkajkajk
-          </div>
-          <img src="../assets/pizza.jpeg"/>
         </div>
-        <div class="test">
+        <div ref="anchorA" style="background-color: purple;">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum eu risus ac efficitur. Mauris quis elit gravida, dignissim libero sed, bibendum lectus. Quisque lobortis ipsum eget cursus suscipit. Donec id ipsum vel tellus porttitor egestas non ut enim. Donec lacinia odio eu sem laoreet volutpat. Donec finibus orci cursus nibh faucibus aliquet. Suspendisse potenti. Phasellus aliquam orci id ligula eleifend rhoncus. Vestibulum at pretium nulla. Curabitur maximus pulvinar mi eget consequat. Integer interdum mollis lacinia. Nulla metus mi, congue ac felis eu, gravida consequat ipsum. Aenean sit amet velit vel elit suscipit hendrerit eget nec nisl. Cras sed iaculis ex, non congue libero.
 
             Nulla ultrices lobortis velit, nec aliquet velit volutpat in. Phasellus interdum ex non quam ultrices malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae pulvinar arcu. Donec condimentum, tortor vel vulputate laoreet, risus neque finibus turpis, eu vestibulum urna turpis at ante. Donec maximus augue vel felis pulvinar eleifend et at purus. Donec id nulla ipsum.
@@ -31,7 +25,7 @@
         <br>
         <br>
         <br>
-        <div>
+        <div ref="anchorB" style="background-color: green;">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum eu risus ac efficitur. Mauris quis elit gravida, dignissim libero sed, bibendum lectus. Quisque lobortis ipsum eget cursus suscipit. Donec id ipsum vel tellus porttitor egestas non ut enim. Donec lacinia odio eu sem laoreet volutpat. Donec finibus orci cursus nibh faucibus aliquet. Suspendisse potenti. Phasellus aliquam orci id ligula eleifend rhoncus. Vestibulum at pretium nulla. Curabitur maximus pulvinar mi eget consequat. Integer interdum mollis lacinia. Nulla metus mi, congue ac felis eu, gravida consequat ipsum. Aenean sit amet velit vel elit suscipit hendrerit eget nec nisl. Cras sed iaculis ex, non congue libero.
 
             Nulla ultrices lobortis velit, nec aliquet velit volutpat in. Phasellus interdum ex non quam ultrices malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae pulvinar arcu. Donec condimentum, tortor vel vulputate laoreet, risus neque finibus turpis, eu vestibulum urna turpis at ante. Donec maximus augue vel felis pulvinar eleifend et at purus. Donec id nulla ipsum.
@@ -49,7 +43,7 @@
         <br>
         <br>
         <br>
-        <div>
+        <div ref="anchorC" style="background-color: orange;">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum eu risus ac efficitur. Mauris quis elit gravida, dignissim libero sed, bibendum lectus. Quisque lobortis ipsum eget cursus suscipit. Donec id ipsum vel tellus porttitor egestas non ut enim. Donec lacinia odio eu sem laoreet volutpat. Donec finibus orci cursus nibh faucibus aliquet. Suspendisse potenti. Phasellus aliquam orci id ligula eleifend rhoncus. Vestibulum at pretium nulla. Curabitur maximus pulvinar mi eget consequat. Integer interdum mollis lacinia. Nulla metus mi, congue ac felis eu, gravida consequat ipsum. Aenean sit amet velit vel elit suscipit hendrerit eget nec nisl. Cras sed iaculis ex, non congue libero.
 
             Nulla ultrices lobortis velit, nec aliquet velit volutpat in. Phasellus interdum ex non quam ultrices malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae pulvinar arcu. Donec condimentum, tortor vel vulputate laoreet, risus neque finibus turpis, eu vestibulum urna turpis at ante. Donec maximus augue vel felis pulvinar eleifend et at purus. Donec id nulla ipsum.
@@ -67,7 +61,7 @@
         <br>
         <br>
         <br>
-        <div>
+        <div style="background-color: grey;">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum eu risus ac efficitur. Mauris quis elit gravida, dignissim libero sed, bibendum lectus. Quisque lobortis ipsum eget cursus suscipit. Donec id ipsum vel tellus porttitor egestas non ut enim. Donec lacinia odio eu sem laoreet volutpat. Donec finibus orci cursus nibh faucibus aliquet. Suspendisse potenti. Phasellus aliquam orci id ligula eleifend rhoncus. Vestibulum at pretium nulla. Curabitur maximus pulvinar mi eget consequat. Integer interdum mollis lacinia. Nulla metus mi, congue ac felis eu, gravida consequat ipsum. Aenean sit amet velit vel elit suscipit hendrerit eget nec nisl. Cras sed iaculis ex, non congue libero.
 
             Nulla ultrices lobortis velit, nec aliquet velit volutpat in. Phasellus interdum ex non quam ultrices malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae pulvinar arcu. Donec condimentum, tortor vel vulputate laoreet, risus neque finibus turpis, eu vestibulum urna turpis at ante. Donec maximus augue vel felis pulvinar eleifend et at purus. Donec id nulla ipsum.
@@ -86,9 +80,11 @@
 </template>
 <script>
 import FloatingMenuBar from './FloatingMenuBar.vue'
+import Section from './Section.vue'
 export default {
   components: {
-    'app-floating-menu-bar': FloatingMenuBar
+    'app-floating-menu-bar': FloatingMenuBar,
+    'app-section': Section
   },
   data () {
     return {
@@ -99,6 +95,11 @@ export default {
     visibilityChanged (isVisible, entry) {
       this.showBar = !isVisible
       console.log(entry)
+    },
+    scrollMeTo (refName) {
+      var element = this.$refs[refName]
+      var top = element.offsetTop
+      window.scrollTo(0, top)
     }
   }
 }
@@ -108,28 +109,20 @@ export default {
 
 div.main{
   width: auto;
+  background-color: darkslategrey;
 }
 
 img{
   width:100%;
 }
 
-div.menu_section {
-  margin:5% auto;
-  text-align: right;
-}
-
 div.menu {
-  position: relative;
+  position: absolute;
   width: 100%;
   float: right;
   top: 10%;
+  /*background-color: red;
   border-style: solid;
-  border-width: 5px;
-  background-color: red;
-}
-div.test {
-  width: auto;
-  background-color:purple;
+  border-width: 5px;*/
 }
 </style>
