@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main" ref="Home">
         <app-floating-menu-bar v-show="showBar" @scroll="scrollMeTo(...arguments)"></app-floating-menu-bar>
         <div>
         <img src="../assets/pizza.jpeg"/>
@@ -99,7 +99,10 @@ export default {
     scrollMeTo (refName) {
       var element = this.$refs[refName]
       var top = element.offsetTop
-      window.scrollTo(0, top)
+      window.scrollTo({
+        top: top,
+        left: 0,
+        behavior: 'smooth'})
     }
   }
 }
